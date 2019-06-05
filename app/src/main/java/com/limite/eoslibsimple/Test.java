@@ -61,7 +61,6 @@ public class Test {
         System.out.println("publicKey2: " + Ecc.getPublicKey(SAMPLE_PRIV_KEY_FOR_TEST));
 
 
-
 //        String actions1 = rpc.getActions("smallred1111", -1, -20);
 //        System.out.println();
 //        System.out.println("GetActions1: " + gson.toJson(actions1));
