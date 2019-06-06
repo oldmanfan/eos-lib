@@ -22,7 +22,7 @@ implementation 'com.redli:eoslibrary_v2.5:2.5'
 - 导入jar包 [eoslibrary_v2.5.jar](https://github.com/TBoyLi/eos-lib-simple/blob/master/app/libs/eoslibrary_v2.5.jar)
 
 ##### 方式三
-[下载源码](https://github.com/TBoyLi/eos-lib-simple)导入eoslibrary module (自行修改源码针对自己项目个性化制定)
+- [下载源码](https://github.com/TBoyLi/eos-lib-simple)导入eoslibrary module (自行修改源码针对自己项目个性化制定)
 
 ## API (Ecc and Rpc)
 >接口返回说明(所有接口返回统一格式)如下：
