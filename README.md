@@ -136,14 +136,30 @@ implementation 'com.redli:eoslibrary_v2.5:2.5'
 - 推荐使用方式如下：
 ```
 final ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1,0L, TimeUnit.MILLISECONDS,new LinkedBlockingQueue<Runnable>());
+final ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1,0L, TimeUnit.MILLISECONDS,new LinkedBlockingQueue<Runnable>());
+Map<String, Object> args1 = new HashMap<>();
+args2.put("msg", "testtest");
+args2.put("index", 123321);
+
+Map<String, Object> args2 = new HashMap<>();
+args2.put("from", "smallred1111");
+args2.put("to", "smallred1112");
+args2.put("quantity", "0.0001 TOK");
+args2.put("memo", "阿卡丽3");
+
 threadPoolExecutor.execute(new Runnable() {
    @Override public void run() {
-        PushTxnResponse txnResponse = rpc.pushTransaction("sakuyatest13", "test", "smallred1111", SAMPLE_PRIV_KEY_FOR_TEST, args2);
+        //自定义智能合约交易
+        String txnResponse1 = rpc.pushTransaction("sakuyatest13", "test", "smallred111167", SAMPLE_PRIV_KEY_FOR_TEST, args2);
         System.out.println();
-        System.out.println("PushTransaction: " + gson.toJson(txnResponse));
+        System.out.println("PushTransaction1: " + gson.toJson(txnResponse1));
+        //EOS 官方智能合约交易
+        String txnResponse2 = rpc.pushTransaction("eosio.token", "transfer", "smallred1111", SAMPLE_PRIV_KEY_FOR_TEST, args2);
+        System.out.println();
+        System.out.println("PushTransaction2: " + gson.toJson(txnResponse2));
         threadPoolExecutor.shutdown();
     }
-  });
+});
 ```
 >ANDROID 版本使用注意项（Android P 限制了明文流量的网络请求，非加密的流量请求都会被系统禁止掉）配置如下：
 ```
