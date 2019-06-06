@@ -1,5 +1,5 @@
 # EOS Java
-Java API，用于使用[EOSIO RPC API](https://developers.eos.io/eosio-nodeos/reference)与基于[EOSIO的区块](https://developers.eos.io/eosio-nodeos/reference)链集。适用Java 和 Android。特色：支持自定义合约
+Java API，用于使用[EOSIO RPC API](https://developers.eos.io/eosio-nodeos/reference)与基于[EOSIO的区块](https://developers.eos.io/eosio-nodeos/reference)链集。适用Java 和 Android。特色：支持自定义智能合约
 
 ## 安装
 
