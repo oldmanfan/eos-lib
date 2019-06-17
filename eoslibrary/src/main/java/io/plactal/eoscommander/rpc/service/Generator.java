@@ -3,6 +3,8 @@ package io.plactal.eoscommander.rpc.service;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.util.concurrent.TimeUnit;
+
 import io.plactal.eoscommander.data.remote.HostInterceptor;
 import io.plactal.eoscommander.data.remote.model.api.Result;
 import io.plactal.eoscommander.data.util.GsonEosTypeAdapterFactory;
@@ -20,6 +22,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Generator {
 
 	private static OkHttpClient httpClient = new OkHttpClient.Builder()
+			.connectTimeout(30, TimeUnit.SECONDS)
+			.readTimeout(60, TimeUnit.SECONDS)
 			.addInterceptor(new HostInterceptor())
 			.build();
 

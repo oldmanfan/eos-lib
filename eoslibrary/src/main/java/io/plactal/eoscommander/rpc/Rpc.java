@@ -186,7 +186,7 @@ public class Rpc {
     }
 
     /**
-     * 获取包含指定表中行的对象
+     * 获取表数据
      *
      * @param scope 作用域
      * @param code  合约名
@@ -198,7 +198,7 @@ public class Rpc {
     }
 
     /**
-     * 获取包含指定表中行的对象
+     * 获取表数据
      *
      * @param scope 作用域
      * @param code  合约名
@@ -211,7 +211,7 @@ public class Rpc {
     }
 
     /**
-     * 获取包含指定表中行的对象
+     * 获取表数据
      *
      * @param scope      作用域
      * @param code       合约名
@@ -224,7 +224,7 @@ public class Rpc {
     }
 
     /**
-     * 获取包含指定表中行的对象
+     * 获取表数据
      *
      * @param scope      作用域
      * @param code       合约名
@@ -239,7 +239,7 @@ public class Rpc {
     }
 
     /**
-     * 获取包含指定表中行的对象
+     * 获取表数据
      *
      * @param scope   作用域
      * @param code    合约名
@@ -252,7 +252,19 @@ public class Rpc {
         return Generator.executeSync(rpcService.getTableRows(new GetTableRequest(scope, code, table, limit, reverse)));
     }
 
-
+    /**
+     * 获取表数据
+     * @param scope 作用域
+     * @param code 合约名
+     * @param table 表名
+         * @param indexPos 索引的位置使用的，公认的参数primary，secondary，tertiary，fourth，fifth，sixth，seventh，eighth，ninth，tenth
+     * @param keyType 为key_type index_position指定的键的类型（例如 - uint64_t或name）
+     * @param encodeType ""
+     * @param lowerBound 过滤结果以返回第一个元素，该元素不小于set中提供的值
+     * @param upperBound 过滤结果以返回大于set中提供的值的第一个元素
+     * @param limit 限制 默认10
+     * @return
+     */
     public String getTableRows(String scope, String code, String table,
                                int indexPos, String keyType, String encodeType, String lowerBound, String upperBound, int limit) {
         return Generator.executeSync(rpcService.getTableRows(new GetTableRequest(scope, code, table, indexPos, keyType, encodeType, lowerBound, upperBound, limit)));
