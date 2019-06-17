@@ -179,5 +179,5 @@ threadPoolExecutor.execute(new Runnable() {
 ## 最后
 >致谢： 
 - [EosCommander](https://github.com/playerone-id/EosCommander) 椭圆曲线算法及blockchain工具类  
-- [eos4j](https://github.com/espritblock/eos4j) 
+- [eos4j](https://github.com/espritblock/eos4j) 私钥生成工具
 
