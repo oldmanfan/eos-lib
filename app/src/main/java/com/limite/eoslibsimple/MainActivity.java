@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final String SAMPLE_PRIV_KEY_FOR_TEST = "5KCwrz6v3sQQiaf85aJW6nd36ZmgucDu8BARfKKup3VeQ1Ar3HU";
+        final String SAMPLE_PRIV_KEY_FOR_TEST = "您的私钥";
 
-        final Rpc rpc = new Rpc("http://10.255.1.225:8888");
+        final Rpc rpc = new Rpc("链地址");
 
         final Gson gson = new Gson();
 
