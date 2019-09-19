@@ -30,4 +30,44 @@ public class Action {
 
     @Expose
     private ActionTrace action_trace;
+
+    public int getGlobal_action_seq() {
+        return global_action_seq;
+    }
+
+    public void setGlobal_action_seq(int global_action_seq) {
+        this.global_action_seq = global_action_seq;
+    }
+
+    public int getAccount_action_seq() {
+        return account_action_seq;
+    }
+
+    public void setAccount_action_seq(int account_action_seq) {
+        this.account_action_seq = account_action_seq;
+    }
+
+    public int getBlock_num() {
+        return block_num;
+    }
+
+    public void setBlock_num(int block_num) {
+        this.block_num = block_num;
+    }
+
+    public String getBlock_time() {
+        return block_time;
+    }
+
+    public void setBlock_time(String block_time) {
+        this.block_time = block_time;
+    }
+
+    public ActionTrace getAction_trace() {
+        return action_trace;
+    }
+
+    public void setAction_trace(ActionTrace action_trace) {
+        this.action_trace = action_trace;
+    }
 }

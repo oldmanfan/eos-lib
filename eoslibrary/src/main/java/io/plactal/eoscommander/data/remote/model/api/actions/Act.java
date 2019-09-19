@@ -32,4 +32,44 @@ public class Act {
 
     @Expose
     private List<Authorization> authorization;
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Data getData() {
+        return data;
+    }
+
+    public void setData(Data data) {
+        this.data = data;
+    }
+
+    public String getHex_data() {
+        return hex_data;
+    }
+
+    public void setHex_data(String hex_data) {
+        this.hex_data = hex_data;
+    }
+
+    public List<Authorization> getAuthorization() {
+        return authorization;
+    }
+
+    public void setAuthorization(List<Authorization> authorization) {
+        this.authorization = authorization;
+    }
 }

@@ -59,4 +59,100 @@ public class ActionTrace {
 
     @Expose
     private List<Object> inline_traces;
+
+    public Receipt getReceipt() {
+        return receipt;
+    }
+
+    public void setReceipt(Receipt receipt) {
+        this.receipt = receipt;
+    }
+
+    public Act getAct() {
+        return act;
+    }
+
+    public void setAct(Act act) {
+        this.act = act;
+    }
+
+    public boolean isContext_free() {
+        return context_free;
+    }
+
+    public void setContext_free(boolean context_free) {
+        this.context_free = context_free;
+    }
+
+    public int getElapsed() {
+        return elapsed;
+    }
+
+    public void setElapsed(int elapsed) {
+        this.elapsed = elapsed;
+    }
+
+    public String getConsole() {
+        return console;
+    }
+
+    public void setConsole(String console) {
+        this.console = console;
+    }
+
+    public String getTrx_id() {
+        return trx_id;
+    }
+
+    public void setTrx_id(String trx_id) {
+        this.trx_id = trx_id;
+    }
+
+    public int getBlock_num() {
+        return block_num;
+    }
+
+    public void setBlock_num(int block_num) {
+        this.block_num = block_num;
+    }
+
+    public String getBlock_time() {
+        return block_time;
+    }
+
+    public void setBlock_time(String block_time) {
+        this.block_time = block_time;
+    }
+
+    public String getProducer_block_id() {
+        return producer_block_id;
+    }
+
+    public void setProducer_block_id(String producer_block_id) {
+        this.producer_block_id = producer_block_id;
+    }
+
+    public Object getExcept() {
+        return except;
+    }
+
+    public void setExcept(Object except) {
+        this.except = except;
+    }
+
+    public List<Object> getAccount_ram_deltas() {
+        return account_ram_deltas;
+    }
+
+    public void setAccount_ram_deltas(List<Object> account_ram_deltas) {
+        this.account_ram_deltas = account_ram_deltas;
+    }
+
+    public List<Object> getInline_traces() {
+        return inline_traces;
+    }
+
+    public void setInline_traces(List<Object> inline_traces) {
+        this.inline_traces = inline_traces;
+    }
 }

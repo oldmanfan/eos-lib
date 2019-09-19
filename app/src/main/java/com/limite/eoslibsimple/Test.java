@@ -17,34 +17,38 @@ public class Test {
 
         final String SAMPLE_PRIV_KEY_FOR_TEST = "您的私钥";
 
+
         Rpc rpc = new Rpc("链地址");
+
 
         Gson gson = new Gson();
 
-        String privateKey = Ecc.seedPrivate("abc");
-        String publicKey = Ecc.getPublicKey(privateKey);
-        System.out.println();
-        System.out.println("privateKey: " + privateKey);
-        System.out.println("publicKey: " + publicKey);
-
-//        String privateKey1 = Ecc.seedPrivate("abc");
+//        String privateKey = Ecc.seedPrivate("abc");
+//        String publicKey = Ecc.getPublicKey(privateKey);
+//        System.out.println();
+//        System.out.println("privateKey: " + privateKey);
+//        System.out.println("privateKey Length: " + privateKey.length());
+//        System.out.println("publicKey: " + publicKey);
+//
+//        String privateKey1 = Ecc.seedPrivate("abcefdgdgagdqerqewrqwtr536547565wtetryu6745er");
 //        String publicKey1 = Ecc.getPublicKey(privateKey);
 //        System.out.println();
 //        System.out.println("privateKey1: " + privateKey1);
+//        System.out.println("privateKey1 Length: " + privateKey1.length());
 //        System.out.println("publicKey1: " + publicKey1);
 //
-//
-        System.out.println();
-        System.out.println("publicKey2: " + Ecc.getPublicKey(SAMPLE_PRIV_KEY_FOR_TEST));
-//
+//        String publicKey1 = Ecc.getPublicKey(SAMPLE_PRIV_KEY_FOR_TEST);
+//        System.out.println();
+//        System.out.println("publicKey1: " + publicKey1);
+
 //        String eosChainInfo =  rpc.getChainInfo();
 //        System.out.println();
 //        System.out.println("GetChainInfo: " + gson.toJson(eosChainInfo));
 //
-//        String account = rpc.getAccount("dipcchelmy12");
-//        System.out.println();
-//        System.out.println("GetAccount: " + gson.toJson(account));
-//
+        String account = rpc.getAccount("dipcchelmy12");
+        System.out.println();
+        System.out.println("GetAccount: " + gson.toJson(account));
+
 //        String keyAccounts = rpc.getKeyAccounts(SAMPLE_PRIV_KEY_FOR_TEST);
 //        System.out.println();
 //        System.out.println("GetKeyAccounts: " + gson.toJson(keyAccounts));
@@ -60,7 +64,7 @@ public class Test {
 //        String balance = rpc.getCurrencyBalance("smallred1111", "eosio.token", "TOK");
 //        System.out.println();
 //        System.out.println("GetCurrencyBalance: " + gson.toJson(balance));
-//
+
 //        String tableRows = rpc.getTableRows("dipcctest112", "dipcctest112", "users");
 //        System.out.println();
 //        System.out.println("GetTableRows: " + gson.toJson(tableRows));
@@ -101,17 +105,19 @@ public class Test {
 //        System.out.println();
 //        System.out.println("GetRequiredKeys: " + gson.toJson(requiredKeysResponse));
 
-//        Map<String, Object> args2 = new HashMap<>();
+        Map<String, Object> args2 = new HashMap<>();
 //        args2.put("msg", "testtest");
 //        args2.put("index", 123321);
-//        String txnResponse = rpc.pushTransaction("sakuyatest13", "test", "smallred111167", SAMPLE_PRIV_KEY_FOR_TEST, args2);
+//        String txnResponse = rpc.pushTransaction("sakuya", "transfer", "dipcchelmy11", SAMPLE_PRIV_KEY_FOR_TEST, args2);
 
-//        args2.put("from", "smallred1111");
-//        args2.put("to", "smallred1112");
-//        args2.put("quantity", "0.0001 TOK");
-//        args2.put("memo", "阿卡丽3");
+
+        args2.put("from", "dipcchelmy11");
+        args2.put("to", "wb");
+        args2.put("quantity", "10.0000 LIVE");
+        args2.put("memo", "");
 
 //        String txnResponse = rpc.pushTransaction("eosio.token", "transfer", "smallred1111", SAMPLE_PRIV_KEY_FOR_TEST, args2);
+//        String txnResponse = rpc.pushTransaction("sakuya", "transfer", "dipcchelmy11", SAMPLE_PRIV_KEY_FOR_TEST, args2);
 //        System.out.println();
 //        System.out.println("PushTransaction: " + gson.toJson(txnResponse));
     }

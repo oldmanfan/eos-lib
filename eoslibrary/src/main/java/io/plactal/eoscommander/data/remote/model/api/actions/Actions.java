@@ -20,4 +20,20 @@ public class Actions {
 
     @Expose
     private List<Action> actions;
+
+    public int getLast_irreversible_block() {
+        return last_irreversible_block;
+    }
+
+    public void setLast_irreversible_block(int last_irreversible_block) {
+        this.last_irreversible_block = last_irreversible_block;
+    }
+
+    public List<Action> getActions() {
+        return actions;
+    }
+
+    public void setActions(List<Action> actions) {
+        this.actions = actions;
+    }
 }
