@@ -16,11 +16,13 @@ import io.plactal.eoscommander.rpc.Rpc;
 public class Test {
     public static void main(String[] arg) {
 
-        final String SAMPLE_PRIV_KEY_FOR_TEST = "您的私钥";
+//        final String SAMPLE_PRIV_KEY_FOR_TEST = "您的私钥";
 
+        final String SAMPLE_PRIV_KEY_FOR_TEST = "5JpBPQykttc7jQSM2oUJZt5SWJdAYMrCbMBnfWdb2BSEnoRZyRn";
 
-        Rpc rpc = new Rpc("链地址");
+//        Rpc rpc = new Rpc("链地址");
 
+        Rpc rpc = new Rpc("http://10.255.1.225:8888");
 
         Gson gson = new Gson();
 

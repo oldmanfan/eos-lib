@@ -19,7 +19,7 @@ implementation 'com.redli:eoslibrary:2.5.2'
 ```
 
 ##### 方式二
-- 导入jar包 [eoslibrary_v2.5.jar](https://github.com/TBoyLi/eos-lib-simple/blob/master/app/libs/eoslibrary_v2.5.jar)
+- 导入jar包 [eoslibrary-2.5.2.jar](https://github.com/TBoyLi/eos-lib-simple/blob/master/app/libs/eoslibrary-2.5.2.jar)
 
 ##### 方式三
 - [下载源码](https://github.com/TBoyLi/eos-lib-simple)导入eoslibrary module (自行修改源码针对自己项目个性化制定)
