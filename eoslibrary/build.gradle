@@ -43,7 +43,7 @@ dependencies {
  * 生成jar包
  */
 def _BASENAME = "eoslibrary"
-def _VERSION = "_v2.5.1"
+def _VERSION = ""
 //生成jar包的位置
 def _DestinationPath = "build/libs/"
 
@@ -70,7 +70,7 @@ makeJar.dependsOn(deleteBuild, build)
  */
 
 // 项目引用的版本号，比如compile 'com.yanzhenjie:andserver:1.0.1'中的1.0.1就是这里配置的
-version = "2.5.1"
+version = "2.5.2"
 
 // 定义两个链接，下面会用到。
 def siteUrl = 'https://github.com/TBoyLi/eos-lib-simple' // 项目主页。

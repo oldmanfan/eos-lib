@@ -257,7 +257,7 @@ public class Rpc {
      * @param scope 作用域
      * @param code 合约名
      * @param table 表名
-         * @param indexPos 索引的位置使用的，公认的参数primary，secondary，tertiary，fourth，fifth，sixth，seventh，eighth，ninth，tenth
+     * @param indexPos 索引的位置使用的，公认的参数primary，secondary，tertiary，fourth，fifth，sixth，seventh，eighth，ninth，tenth
      * @param keyType 为key_type index_position指定的键的类型（例如 - uint64_t或name）
      * @param encodeType ""
      * @param lowerBound 过滤结果以返回第一个元素，该元素不小于set中提供的值

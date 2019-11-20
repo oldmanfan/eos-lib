@@ -1,6 +1,7 @@
 package com.limite.eoslibsimple;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -45,9 +46,9 @@ public class Test {
 //        System.out.println();
 //        System.out.println("GetChainInfo: " + gson.toJson(eosChainInfo));
 //
-        String account = rpc.getAccount("dipcchelmy12");
-        System.out.println();
-        System.out.println("GetAccount: " + gson.toJson(account));
+//        String account = rpc.getAccount("dipcchelmy12");
+//        System.out.println();
+//        System.out.println("GetAccount: " + gson.toJson(account));
 
 //        String keyAccounts = rpc.getKeyAccounts(SAMPLE_PRIV_KEY_FOR_TEST);
 //        System.out.println();
@@ -57,7 +58,7 @@ public class Test {
 //        System.out.println();
 //        System.out.println("GetActions: " + gson.toJson(actions));
 
-//        String actions1 = rpc.getActions("smallred1111", -1, -20);
+//        String actions1 = rpc.getActions("smallred1111", 0, 10);
 //        System.out.println();
 //        System.out.println("GetActions1: " + gson.toJson(actions1));
 //
@@ -65,14 +66,14 @@ public class Test {
 //        System.out.println();
 //        System.out.println("GetCurrencyBalance: " + gson.toJson(balance));
 
-//        String tableRows = rpc.getTableRows("dipcctest112", "dipcctest112", "users");
+//        String tableRows = rpc.getTableRows("usrtokenlist", "usrtokenlist", "token");
 //        System.out.println();
 //        System.out.println("GetTableRows: " + gson.toJson(tableRows));
 
 //        String tableRows1 = rpc.getTableRows("sakuyatest12", "sakuyatest12", "dusers", 100);
 //        System.out.println();
 //        System.out.println("GetTableRows1: " + gson.toJson(tableRows1));
-//
+////
 //        String tableRows2 = rpc.getTableRows("sakuyatest12", "sakuyatest12", "dusers", 100, true);
 //        System.out.println();
 //        System.out.println("GetTableRows2: " + gson.toJson(tableRows2));
@@ -81,9 +82,13 @@ public class Test {
 //        System.out.println();
 //        System.out.println("GetTableRows3: " + gson.toJson(tableRows3));
 
-//        String tableRows4 = rpc.getTableRows("dipcctest112", "dipcctest112", "users", -1, "", "", "dipcchelmy11", "", 0);
-//        System.out.println();
-//        System.out.println("GetTableRows4: " + gson.toJson(tableRows4));
+        String tableRows4 = rpc.getTableRows("dipcctest112", "dipcctest112", "users", 1, "", "", "", "", 10);
+        System.out.println();
+        System.out.println("GetTableRows4: " + gson.toJson(tableRows4));
+        System.out.println();
+        JsonObject jsonObject = gson.fromJson(tableRows4, JsonObject.class);
+        String data = jsonObject.get("data").getAsString();
+        System.out.println("GetTableRows4: " + data);
 
 //        Map<String, Object> args = new HashMap<>();
 //        args.put("msg", "testtest");
@@ -105,17 +110,17 @@ public class Test {
 //        System.out.println();
 //        System.out.println("GetRequiredKeys: " + gson.toJson(requiredKeysResponse));
 
-        Map<String, Object> args2 = new HashMap<>();
+//        Map<String, Object> args2 = new HashMap<>();
 //        args2.put("msg", "testtest");
 //        args2.put("index", 123321);
 //        String txnResponse = rpc.pushTransaction("sakuya", "transfer", "dipcchelmy11", SAMPLE_PRIV_KEY_FOR_TEST, args2);
 
 
-        args2.put("from", "dipcchelmy11");
-        args2.put("to", "wb");
-        args2.put("quantity", "10.0000 LIVE");
-        args2.put("memo", "");
-
+//        args2.put("from", "dipcchelmy11");
+//        args2.put("to", "wb");
+//        args2.put("quantity", "10.0000 LIVE");
+//        args2.put("memo", "");
+//
 //        String txnResponse = rpc.pushTransaction("eosio.token", "transfer", "smallred1111", SAMPLE_PRIV_KEY_FOR_TEST, args2);
 //        String txnResponse = rpc.pushTransaction("sakuya", "transfer", "dipcchelmy11", SAMPLE_PRIV_KEY_FOR_TEST, args2);
 //        System.out.println();

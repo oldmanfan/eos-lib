@@ -9,7 +9,7 @@ import io.plactal.eoscommander.util.StringUtils;
  */
 
 public class GetTableRequest {
-    private static final int DEFAULT_FETCH_LIMIT = 10;
+    private static final int DEFAULT_FETCH_LIMIT = 10000;
 
     @Expose
     private boolean json = true;
