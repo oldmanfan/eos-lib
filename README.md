@@ -8,14 +8,14 @@ Java API，用于使用[EOSIO RPC API](https://developers.eos.io/eosio-nodeos/re
 ```
 <dependency>
 	<groupId>com.redli</groupId>
-	<artifactId>eoslibrary_v2.5</artifactId>
-	<version>2.5</version>
+	<artifactId>eoslibrary</artifactId>
+	<version>2.5.2</version>
 	<type>pom</type>
 </dependency>
 ```
 - Gradle
 ```
-implementation 'com.redli:eoslibrary_v2.5:2.5'
+implementation 'com.redli:eoslibrary:2.5.2'
 ```
 
 ##### 方式二
