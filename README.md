@@ -29,7 +29,7 @@ implementation 'com.redli:eoslibrary:2.5.2'
 ```
 {
     "isSuccess":true or false,
-    "message":"操作成功 or 操作成功",
+    "message":"操作成功 or 操作失败",
     "data":"链返回的json信息"
 }
 ```
