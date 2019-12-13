@@ -9,17 +9,17 @@ Java API，用于使用[EOSIO RPC API](https://developers.eos.io/eosio-nodeos/re
 <dependency>
 	<groupId>com.redli</groupId>
 	<artifactId>eoslibrary</artifactId>
-	<version>2.5.3</version>
+	<version>2.5.4</version>
 	<type>pom</type>
 </dependency>
 ```
 - Gradle
 ```
-implementation 'com.redli:eoslibrary:2.5.3'
+implementation 'com.redli:eoslibrary:2.5.4'
 ```
 
 ##### 方式二
-- 导入jar包 [eoslibrary-2.5.3.jar](https://github.com/TBoyLi/eos-lib-simple/blob/master/app/libs/eoslibrary-2.5.3.jar)
+- 导入jar包 [eoslibrary-2.5.4.jar](https://github.com/TBoyLi/eos-lib-simple/blob/master/app/libs/eoslibrary-2.5.4.jar)
 
 ##### 方式三
 - [下载源码](https://github.com/TBoyLi/eos-lib-simple)导入eoslibrary module (自行修改源码针对自己项目个性化制定)
