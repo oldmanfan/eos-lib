@@ -8,7 +8,7 @@ android {
     compileSdkVersion 28
 
     defaultConfig {
-        minSdkVersion 24
+        minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -32,6 +32,7 @@ android {
 
 dependencies {
     testImplementation 'junit:junit:4.12'
+//    implementation 'com.android.support:support-annotations:28.0.0@jar'
     //retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
@@ -70,7 +71,7 @@ makeJar.dependsOn(deleteBuild, build)
  */
 
 // 项目引用的版本号，比如compile 'com.yanzhenjie:andserver:1.0.1'中的1.0.1就是这里配置的
-version = "2.5.2"
+version = "2.5.3"
 
 // 定义两个链接，下面会用到。
 def siteUrl = 'https://github.com/TBoyLi/eos-lib-simple' // 项目主页。
