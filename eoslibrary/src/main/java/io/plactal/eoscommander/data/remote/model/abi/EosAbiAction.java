@@ -8,13 +8,19 @@ import com.google.gson.annotations.Expose;
 
 public class EosAbiAction {
     @Expose
+    public String ricardian_contract;
+
+    @Expose
     public String name;
 
     @Expose
     public String type;
 
+    @Expose
+    public String ability;  // 'normal' or 'pureview'
+
     @Override
     public String toString(){
-        return "EosAction: " + name + ", type: "+ type ;
+        return "EosAction: " + name + ", type: "+ type + ", ability: " + ability ;
     }
 }

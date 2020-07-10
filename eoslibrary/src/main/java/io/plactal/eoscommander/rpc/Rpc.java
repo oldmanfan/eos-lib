@@ -1,5 +1,7 @@
 package io.plactal.eoscommander.rpc;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -24,6 +26,7 @@ import io.plactal.eoscommander.data.remote.model.api.GetTableRequest;
 import io.plactal.eoscommander.data.remote.model.chain.Action;
 import io.plactal.eoscommander.data.remote.model.chain.PackedTransaction;
 import io.plactal.eoscommander.data.remote.model.chain.SignedTransaction;
+import io.plactal.eoscommander.data.remote.model.types.TypeActionName;
 import io.plactal.eoscommander.data.remote.model.types.TypeChainId;
 import io.plactal.eoscommander.rpc.service.Generator;
 import io.plactal.eoscommander.rpc.service.RpcService;
@@ -141,48 +144,6 @@ public class Rpc {
      */
     public String getAccount(String account) {
         return Generator.executeSync(rpcService.getAccount(Collections.singletonMap("account_name", account)));
-    }
-
-    /**
-     * 通过私钥获取账户名
-     *
-     * @param privateKey
-     * @return
-     */
-    public String getKeyAccounts(String privateKey) {
-        EosPrivateKey eosPrivateKey = new EosPrivateKey(privateKey);
-        String publicKey = eosPrivateKey.getPublicKey().toString();
-        return Generator.executeSync(rpcService.getKeyAccounts(Collections.singletonMap("public_key", publicKey)));
-    }
-
-    /**
-     * 获得交易信息
-     *
-     * @param account 账户名称
-     * @return
-     */
-    public String getActions(String account) {
-        Map<String, Object> requestFields = new HashMap<>(3);
-        requestFields.put("account_name", account);
-        requestFields.put("pos", -1);
-        requestFields.put("offset", -20);
-        return Generator.executeSync(rpcService.getActions(requestFields));
-    }
-
-    /**
-     * 获得交易信息
-     *
-     * @param pos 位置
-     * @param offset 偏移量
-     * @param account 账户名称
-     * @return
-     */
-    public String getActions(String account, int pos, int offset) {
-        Map<String, Object> requestFields = new HashMap<>(3);
-        requestFields.put("account_name", account);
-        requestFields.put("pos", pos);
-        requestFields.put("offset", offset);
-        return Generator.executeSync(rpcService.getActions(requestFields));
     }
 
     /**
@@ -379,7 +340,6 @@ public class Rpc {
      * @return
      */
     public String pushTransaction(String code, String action, String account, String privateKey, Map<String, Object> args) {
-
         Gson gson = new Gson();
 
         JsonObject infoData = gson.fromJson(getChainInfo(), JsonObject.class);
@@ -461,5 +421,15 @@ public class Rpc {
         return Generator.executeSync(rpcService.pushTransaction(packedTransaction));
     }
 
+    public String getAccountExists(String accountName) {
+        Map<String, String> requestFields = new HashMap<>();
+        requestFields.put("account_name", accountName);
+        return Generator.executeSync(rpcService.getAccountExist(requestFields));
+    }
 
+    public String getTransferFee(long block_height) {
+        Map<String, Long> requestFields = new HashMap<>(1);
+        requestFields.put("block_height", block_height);
+        return Generator.executeSync(rpcService.getTransferFee(requestFields));
+    }
 }

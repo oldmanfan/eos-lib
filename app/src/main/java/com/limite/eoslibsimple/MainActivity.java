@@ -2,6 +2,7 @@ package com.limite.eoslibsimple;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.gson.Gson;
 
@@ -26,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         final String SAMPLE_PRIV_KEY_FOR_TEST = "您的私钥";
 
-        final Rpc rpc = new Rpc("链地址");
+//        final Rpc rpc = new Rpc("https://ultrainio.ultrain.info");
+        final Rpc rpc = new Rpc("https://pioneer.ultrain.info");
 
         final Gson gson = new Gson();
 
@@ -41,6 +43,39 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
 
                 String eosChainInfo =  rpc.getChainInfo();
+                Log.d(TAG, "ChainInfo: " + eosChainInfo);
+
+                String balance = rpc.getCurrencyBalance("liangqin1", "utrio.token", "UGAS");
+                Log.d(TAG, "MyBalance: " + balance);
+
+                String transFee = rpc.getTransferFee(3945524L);
+                Log.d(TAG, "TransferFee: " + transFee);
+
+                Map<String, Object> payload = new HashMap<>();
+                payload.put("user_id", "6C37204FF07F4AA1BA67DF43502045E3");
+                payload.put("user_name", "muhanmude");
+                payload.put("user_phone", "188");
+                payload.put("id_card_number", "371**");
+                payload.put("record_content", "xxx");
+                payload.put("action_desc", "xxxx");
+                payload.put("point_type", "xxx");
+                payload.put("action_point", 10);
+                payload.put("action_time", 1592897730075L);
+                payload.put("record_hash", "9BA2CD7DDE31BDB66CB393167EDB5426");
+                payload.put("upper_chain_time", 1592897731719L);
+
+                Map<String, Object> record = new HashMap<>();
+                record.put("record", payload);
+                String r = rpc.pushTransaction("yuanjing1", "setPointsRecord", "yuanjing1", "5KfjDYSn44QfW2s9xs8NxrCPMZUh1ZbZNJG7o6PUsLNg8VbCdV4", record);
+                Log.d(TAG, "setPointsRecord: " + r);
+
+                Map<String, Object> p = new HashMap<>();
+                p.put("user_id", "6C37204FF07F4AA1BA67DF43502045E3");
+                String points = rpc.pushTransaction("yuanjing1", "getPointsRecord", "yuanjing1", "5KfjDYSn44QfW2s9xs8NxrCPMZUh1ZbZNJG7o6PUsLNg8VbCdV4", p);
+                Log.d(TAG, "Points: " + points);
+
+                String exists = rpc.getAccountExists("yuanjing1");
+                Log.d(TAG, "account exists: " + exists);
 //        System.out.println();
 //        System.out.println("GetChainInfo: " + gson.toJson(eosChainInfo));
 //
@@ -62,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
 //        System.out.println();
 //        System.out.println("GetCurrencyBalance: " + gson.toJson(balance));
 //
-        String tableRows = rpc.getTableRows("sakuyatest12", "sakuyatest12", "dusers");
-        System.out.println();
-        System.out.println("GetTableRows: " + gson.toJson(tableRows));
+//        String tableRows = rpc.getTableRows("sakuyatest12", "sakuyatest12", "dusers");
+//        System.out.println();
+//        System.out.println("GetTableRows: " + gson.toJson(tableRows));
 //
 //        String tableRows1 = rpc.getTableRows("sakuyatest12", "sakuyatest12", "dusers", 100);
 //        System.out.println();
@@ -95,19 +130,19 @@ public class MainActivity extends AppCompatActivity {
 //        System.out.println("GetRequiredKeys: " + gson.toJson(requiredKeysResponse));
 //
 
-                Map<String, Object> args2 = new HashMap<>();
+//                Map<String, Object> args2 = new HashMap<>();
 //        args2.put("msg", "testtest");
 //        args2.put("index", 123321);
 //        String txnResponse = rpc.pushTransaction("sakuyatest13", "test", "smallred111167", SAMPLE_PRIV_KEY_FOR_TEST, args2);
 
-                args2.put("from", "smallred1111");
-                args2.put("to", "smallred1112");
-                args2.put("quantity", "0.0001 TOK");
-                args2.put("memo", "阿卡丽2");
-
-                String txnResponse = rpc.pushTransaction("eosio.token", "transfer", "smallred1111", SAMPLE_PRIV_KEY_FOR_TEST, args2);
-                System.out.println();
-                System.out.println("PushTransaction: " + gson.toJson(txnResponse));
+//                args2.put("from", "smallred1111");
+//                args2.put("to", "smallred1112");
+//                args2.put("quantity", "0.0001 TOK");
+//                args2.put("memo", "阿卡丽2");
+//
+//                String txnResponse = rpc.pushTransaction("eosio.token", "transfer", "smallred1111", SAMPLE_PRIV_KEY_FOR_TEST, args2);
+//                System.out.println();
+//                System.out.println("PushTransaction: " + gson.toJson(txnResponse));
 
                 threadPoolExecutor.shutdown();
             }

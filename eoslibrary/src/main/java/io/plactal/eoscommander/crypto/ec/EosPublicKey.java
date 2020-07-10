@@ -35,7 +35,7 @@ import io.plactal.eoscommander.util.RefValue;
  */
 
 public class EosPublicKey {
-    private static final String LEGACY_PREFIX = "EOS";
+    private static final String LEGACY_PREFIX = "UTR";
     private static final String PREFIX = "PUB";
 
 //    private static final int CHECK_BYTE_LEN = 4;
