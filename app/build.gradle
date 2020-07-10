@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.limite.eoslibsimple"
+        applicationId "com.limite.ultrainlibsimple"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
@@ -30,8 +30,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 //    implementation 'com.google.code.gson:gson:2.8.2'
-    implementation project(path: ':eoslibrary')
-//    implementation 'com.redli:eoslibrary:2.5.4'
-//    implementation files('libs/eoslibrary-2.5.4.jar')
+    implementation project(path: ':ultrainlibrary')
+//    implementation 'com.redli:ultrainlibrary:2.5.4'
+//    implementation files('libs/ultrainlibrary-2.5.4.jar')
     implementation 'com.google.code.gson:gson:2.8.2'
 }
